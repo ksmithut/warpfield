@@ -1,0 +1,24 @@
+{
+  "name": "slipstream-drive",
+  "version": "1.0.0",
+  "description": "An RPC framework that leverages protocol buffers to make device to device communication fast.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksmithut/slipstream-drive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksmithut/slipstream-drive/issues"
+  },
+  "homepage": "https://github.com/ksmithut/slipstream-drive#readme",
+  "dependencies": {
+    "http2": "^3.3.4",
+    "protocol-buffers": "^3.1.6"
+  }
+}
