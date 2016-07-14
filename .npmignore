@@ -1,0 +1,9 @@
+lib/**/*.spec.js
+examples
+coverage
+test
+.codeclimate.yml
+.eslintrc.js
+.istanbul.yml
+.travis.yml
+.gitignore

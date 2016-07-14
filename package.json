@@ -4,7 +4,14 @@
   "description": "An RPC framework that leverages protocol buffers to make device to device communication fast.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "npm run test:lint",
+    "test": "npm run test:unit",
+    "posttest": "npm run test:coverage",
+    "test:lint": "eslint . --ignore-path=.gitignore",
+    "test:unit": "NODE_ENV=test istanbul cover _mocha",
+    "test:coverage": "istanbul check-coverage",
+    "test:coverage:report": "open coverage/lcov-report/index.html",
+    "test:coverage:codeclimate": "cat ./coverage/lcov.info | codeclimate-test-reporter"
   },
   "repository": {
     "type": "git",
@@ -18,7 +25,23 @@
   },
   "homepage": "https://github.com/ksmithut/slipstream-drive#readme",
   "dependencies": {
-    "http2": "^3.3.4",
+    "bluebird": "^3.4.1",
+    "debug": "^2.2.0",
     "protocol-buffers": "^3.1.6"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "chai-spies": "^0.7.1",
+    "codeclimate-test-reporter": "^0.3.3",
+    "eslint": "^3.0.1",
+    "eslint-config-ksmithut": "^2.1.3",
+    "eslint-plugin-mocha": "^4.0.0",
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3",
+    "mocha-lcov-reporter": "^1.2.0",
+    "nock": "^8.0.0",
+    "supertest": "^1.2.0",
+    "supertest-as-promised": "^3.2.0"
   }
 }
