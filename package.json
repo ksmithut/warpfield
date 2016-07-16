@@ -27,7 +27,8 @@
   "dependencies": {
     "bluebird": "^3.4.1",
     "debug": "^2.2.0",
-    "protocol-buffers": "^3.1.6"
+    "protocol-buffers": "^3.1.6",
+    "restify": "^4.1.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
