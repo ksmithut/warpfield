@@ -102,11 +102,9 @@ Adds a handler to a given method name.
 - `methodName` The name of the method to bind to.
 - `handler` The function that should be called when the method is called.
 
-## `slipstream.server(options)`
+## `slipstream.server()`
 
 Returns a new slipstream server instance
-
-- `options` The options to pass into restify. [full docs][restify]
 
 ### `server.register(service)`
 
@@ -124,5 +122,3 @@ Stops the server. Returns a promise that resolves when all remaining connections
 have finished, unless force is `true`
 
 - `force` Whether or not to force stop the server. Defaults to false
-
-[restify]: http://restify.com/#creating-a-server
