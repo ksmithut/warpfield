@@ -122,3 +122,11 @@ Stops the server. Returns a promise that resolves when all remaining connections
 have finished, unless force is `true`
 
 - `force` Whether or not to force stop the server. Defaults to false
+
+## `slipstream.client(serviceLocation, protobufService)`
+
+Returns a new slipstream client with the methods on the given service. It will
+have the methods of the service in lowerCamelCase form.
+
+- `serviceLocation` This can be a string (hostname:port) or a service instance.
+- `protobufService` The protobufService instance from slipstream.load[File].
