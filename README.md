@@ -42,9 +42,9 @@ const greeter = warpfield.service(proto.Greeter, {
   }
 })
 
-server.register(greeter)
+server.use(greeter)
 
-server.start('8000')
+server.listen({ port: '8000' })
 ```
 
 client usage
@@ -53,7 +53,9 @@ client usage
 const warpfield = require('warpfield')
 
 const proto = warpfield.loadFile('greeter.proto')
-const greeter = warpfield.client('localhost:8000', proto.Greeter)
+const greeter = warpfield.client(proto.Greeter, {
+  host: 'http://localhost:8000'
+})
 
 greeter.sayHello({ name: 'Jack Bliss' })
   .then((response) => {
@@ -112,9 +114,13 @@ Registers a service with the server
 
 - `service` The warpfield service instance to bind to that namespace.
 
-### `server.listen(port)`
+### `server.listen(options)`
 
 Starts the server. Returns a promise that resolves when the server has started.
+
+- `options.type` The type of transport to use. `'http'` is the only valid one
+  for now. Defaults to `'http'`
+- `options.*` the rest of the options will vary depending on the transport.
 
 ### `server.close()`
 
@@ -127,3 +133,7 @@ have the methods of the service in lowerCamelCase form.
 
 - `protobufService` The protobufService instance from warpfield.load[File].
 - `remoteOptions` This can be an object or a warpfield service.
+- `remoteOptions.type` The type of transport to use. `'http'` is the only valid
+  one for now. Defaults to `'http'`
+- `remoteOptions.*` The rest of the options will vary depending on the
+  transport.
