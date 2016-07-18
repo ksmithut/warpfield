@@ -19,3 +19,6 @@ exports.service = function service(protobufService, methods) {
 
 exports.load = load.load
 exports.loadFile = load.loadFile
+exports.Service = Service
+exports.Client = Client
+exports.Server = Server
