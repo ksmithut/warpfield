@@ -95,7 +95,7 @@ Returns a slipstream service object
   object the match the definition. Handlers can be added after this initial
   declaration.
 
-### `service.use(methodName, handler)`
+### `service.handle(methodName, handler)`
 
 Adds a handler to a given method name.
 
@@ -123,10 +123,11 @@ have finished, unless force is `true`
 
 - `force` Whether or not to force stop the server. Defaults to false
 
-## `slipstream.client(serviceLocation, protobufService)`
+## `slipstream.client(protobufService, remoteOptions)`
 
 Returns a new slipstream client with the methods on the given service. It will
 have the methods of the service in lowerCamelCase form.
 
-- `serviceLocation` This can be a string (hostname:port) or a service instance.
 - `protobufService` The protobufService instance from slipstream.load[File].
+- `remoteOptions` This can be an object (passed into url.format) or a slipstream
+  service.
