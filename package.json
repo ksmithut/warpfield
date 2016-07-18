@@ -1,6 +1,6 @@
 {
   "name": "warpfield",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "An RPC framework that leverages protocol buffers to make server to server communication fast.",
   "main": "index.js",
   "scripts": {
