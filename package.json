@@ -1,5 +1,5 @@
 {
-  "name": "slipstream-drive",
+  "name": "warpfield",
   "version": "1.0.0",
   "description": "An RPC framework that leverages protocol buffers to make server to server communication fast.",
   "main": "index.js",
@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ksmithut/slipstream-drive.git"
+    "url": "git+https://github.com/ksmithut/warpfield.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ksmithut/slipstream-drive/issues"
+    "url": "https://github.com/ksmithut/warpfield/issues"
   },
-  "homepage": "https://github.com/ksmithut/slipstream-drive#readme",
+  "homepage": "https://github.com/ksmithut/warpfield#readme",
   "dependencies": {
     "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",

@@ -1,3 +1,2 @@
-lib/**/*.spec.js
+test/*.js lib/**/*.spec.js
 --require test/setup/chai
---reporter spec

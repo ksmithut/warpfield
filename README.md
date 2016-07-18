@@ -1,4 +1,4 @@
-# slipstream-drive
+# warpfield
 
 An RPC framework that leverages protocol buffers to make server to server
 communication fast.
@@ -6,7 +6,7 @@ communication fast.
 # Installation
 
 ```
-npm install --save slipstream-drive
+npm install --save warpfield
 ```
 
 # Usage
@@ -31,12 +31,12 @@ service Greeter {
 ```js
 'use strict'
 
-const slipstream = require('slipstream-drive')
+const warpfield = require('warpfield')
 
-const proto = slipstream.loadFile('greeter.proto')
-const server = slipstream.server()
+const proto = warpfield.loadFile('greeter.proto')
+const server = warpfield.server()
 
-const greeter = slipstream.service(proto.Greeter, {
+const greeter = warpfield.service(proto.Greeter, {
   sayHello(request) {
     return { message: `Hello ${request.name}` }
   }
@@ -50,10 +50,10 @@ server.start('8000')
 client usage
 
 ```js
-const slipstream = require('slipstream-drive')
+const warpfield = require('warpfield')
 
-const proto = slipstream.loadFile('greeter.proto')
-const greeter = slipstream.client('localhost:8000', proto.Greeter)
+const proto = warpfield.loadFile('greeter.proto')
+const greeter = warpfield.client('localhost:8000', proto.Greeter)
 
 greeter.sayHello({ name: 'Jack Bliss' })
   .then((response) => {
@@ -63,10 +63,10 @@ greeter.sayHello({ name: 'Jack Bliss' })
 
 # API
 
-`slipstream` is heretofore a shortcut for `require('slipstream-drive') as far as
+`warpfield` is heretofore a shortcut for `require('warpfield') as far as
 these docs are concerned.
 
-## `slipstream.loadFile(path)`
+## `warpfield.loadFile(path)`
 
 Loads a `.proto` file. Services will be on the returned object with the service
 names being the properties.
@@ -74,16 +74,16 @@ names being the properties.
 - `path` The path to the proto file to load. This path must be relative to cwd
   or an absolute path. Protocol buffer imports are not resolved at this time.
 
-## `slipstream.load(protobuf)`
+## `warpfield.load(protobuf)`
 
 Loads the protocol buffer schema from a string/buffer. Services will be on the
 returned object with the service names being the properties.
 
 - `protobuf` A string/buffer of the protocol buffer definition.
 
-## `slipstream.service(protobufService[, handlers])`
+## `warpfield.service(protobufService[, handlers])`
 
-Returns a slipstream service object
+Returns a warpfield service object
 
 - `protobufService` The protocol buffer service as returned from `.load` or
   `.loadFile`. If it's not passed, it's assumed that this will be a json
@@ -102,15 +102,15 @@ Adds a handler to a given method name.
 - `methodName` The name of the method to bind to.
 - `handler` The function that should be called when the method is called.
 
-## `slipstream.server()`
+## `warpfield.server()`
 
-Returns a new slipstream server instance
+Returns a new warpfield server instance
 
-### `server.register(service)`
+### `server.use(service)`
 
 Registers a service with the server
 
-- `service` The slipstream service instance to bind to that namespace.
+- `service` The warpfield service instance to bind to that namespace.
 
 ### `server.listen(port)`
 
@@ -120,11 +120,10 @@ Starts the server. Returns a promise that resolves when the server has started.
 
 Stops the server. Returns a promise that resolves when the server has closed.
 
-## `slipstream.client(protobufService, remoteOptions)`
+## `warpfield.client(protobufService, remoteOptions)`
 
-Returns a new slipstream client with the methods on the given service. It will
+Returns a new warpfield client with the methods on the given service. It will
 have the methods of the service in lowerCamelCase form.
 
-- `protobufService` The protobufService instance from slipstream.load[File].
-- `remoteOptions` This can be an object (passed into url.format) or a slipstream
-  service.
+- `protobufService` The protobufService instance from warpfield.load[File].
+- `remoteOptions` This can be an object or a warpfield service.
