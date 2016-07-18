@@ -112,16 +112,13 @@ Registers a service with the server
 
 - `service` The slipstream service instance to bind to that namespace.
 
-### `server.start(port)`
+### `server.listen(port)`
 
 Starts the server. Returns a promise that resolves when the server has started.
 
-### `server.stop([force])`
+### `server.close()`
 
-Stops the server. Returns a promise that resolves when all remaining connections
-have finished, unless force is `true`
-
-- `force` Whether or not to force stop the server. Defaults to false
+Stops the server. Returns a promise that resolves when the server has closed.
 
 ## `slipstream.client(protobufService, remoteOptions)`
 
