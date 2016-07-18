@@ -1,5 +1,12 @@
 # warpfield
 
+[![NPM version](http://img.shields.io/npm/v/warpfield.svg?style=flat)](https://www.npmjs.org/package/warpfield)
+[![Dependency Status](http://img.shields.io/david/ksmithut/warpfield.svg?style=flat)](https://david-dm.org/ksmithut/warpfield)
+[![Dev Dependency Status](http://img.shields.io/david/dev/ksmithut/warpfield.svg?style=flat)](https://david-dm.org/ksmithut/warpfield#info=devDependencies&view=table)
+[![Code Climate](http://img.shields.io/codeclimate/github/ksmithut/warpfield.svg?style=flat)](https://codeclimate.com/github/ksmithut/warpfield)
+[![Build Status](http://img.shields.io/travis/ksmithut/warpfield/master.svg?style=flat)](https://travis-ci.org/ksmithut/warpfield)
+[![Coverage Status](http://img.shields.io/codeclimate/coverage/github/ksmithut/warpfield.svg?style=flat)](https://codeclimate.com/github/ksmithut/warpfield)
+
 An RPC framework that leverages protocol buffers to make server to server
 communication fast.
 
